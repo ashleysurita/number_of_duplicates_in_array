@@ -2,7 +2,8 @@
 
 ###Problem
 Javascript
-```function numDuplicates(array) {
+```
+function numDuplicates(array) {
     // Write your code here.
     return -1
 }
