@@ -1,19 +1,16 @@
 function numDuplicates(array) {
     if(!array || !array.length) return 0
     
-    const counts = {}
-    for(let i = 0; i < array.length; i++){
-        if( counts[array[i]] ){
-            counts[array[i]]++
-        } else {
-            counts[array[i]] = 1
+    const map = {}
+    let count = 0
+    array.forEach(num => {
+        if(map[num]){
+            map[num]++
+            if(map[num] === 2) count++
         }
-    }
-    
-    const duplicates = []
-    Object.keys(counts).forEach(key => counts[key] > 1 ? duplicates.push(key) : null)
-    
-    return duplicates.length
+        else map[num] = 1
+    })
+    return count
 }
 
 // Test Cases
